@@ -2,20 +2,13 @@ import requests
 import tweepy
 from bs4 import BeautifulSoup
 
+# Twitter credentials (Tweepy v1.1 and v2)
 consumer_key = 'sK7YeAis3LbNSK2wRzqMFEXCK'
 consumer_secret = 'kTLn8HSHwMBdAO6PFArcJDRrDHgzxMK1fJ1RgPtsIuiJq1t5TL'
 access_token = '1938981766104072192-5aIFTs7EdXNEYMPMFVXSiDeRjVR366'
 access_token_secret = 'CE7KbykD8W9msVe8Brp16gIyKqCeuOrstfMLTqhgKNvET'
 
-# Tweepy v2 client
-client = tweepy.Client(
-    consumer_key=consumer_key,
-    consumer_secret=consumer_secret,
-    access_token=access_token,
-    access_token_secret=access_token_secret
-)
-
-# Tweepy v1.1 API (for media upload)
+# Tweepy OAuth1 for API v1.1 (media upload + tweet)
 auth = tweepy.OAuth1UserHandler(
     consumer_key, consumer_secret,
     access_token, access_token_secret
@@ -49,7 +42,7 @@ def download_image(filename='face.jpg'):
 
 def post_image(image_path):
     media = api.media_upload(image_path)
-    client.create_tweet(media_ids=[media.media_id])
+    api.update_status(status="", media_ids=[media.media_id])
 
 def main():
     image_file = download_image()
