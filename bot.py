@@ -15,8 +15,13 @@ client = tweepy.Client(
     access_token_secret=access_token_secret
 )
 
-def download_image(url='https://thispersondoesnotexist.com/image', filename='face.jpg'):
-    response = requests.get(url)
+def download_image(url='https://this-person-does-not-exist.com/en/image', filename='face.jpg'):
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                      "AppleWebKit/537.36 (KHTML, like Gecko) "
+                      "Chrome/114.0.0.0 Safari/537.36"
+    }
+    response = requests.get(url, headers=headers)
     response.raise_for_status()
     with open(filename, 'wb') as f:
         f.write(response.content)
@@ -32,3 +37,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
