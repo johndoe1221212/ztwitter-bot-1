@@ -3,10 +3,10 @@ import random
 import emoji
 
 # Twitter credentials (fill in your own)
-consumer_key = 'sK7YeAis3LbNSK2wRzqMFEXCK'
-consumer_secret = 'kTLn8HSHwMBdAO6PFArcJDRrDHgzxMK1fJ1RgPtsIuiJq1t5TL'
-access_token = '1938981766104072192-5aIFTs7EdXNEYMPMFVXSiDeRjVR366'
-access_token_secret = 'CE7KbykD8W9msVe8Brp16gIyKqCeuOrstfMLTqhgKNvET'
+consumer_key = 'm6Zl3vxkHhcLPp2T9agVeQUOn'
+consumer_secret = 'lYN0DgHux8fFtHyGWUxwFccAIfbY6jYEoG6WpbNRFqdMy1d7Z3'
+access_token = '1853549000906952704-GS0x8hI4jHalztQZ2zhg8SOx4ITJKZ'
+access_token_secret = 'HY6CyPraep8GbPkgzGDctRwPHgo6JWyeOXoXbBo8ru6eG'
 
 # Initialize Tweepy Client (v2)
 client = tweepy.Client(
